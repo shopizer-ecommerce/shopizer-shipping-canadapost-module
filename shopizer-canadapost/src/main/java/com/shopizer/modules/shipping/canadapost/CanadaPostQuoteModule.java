@@ -59,7 +59,7 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 	private final static String US_CODE = "US";
 	
 	//dev  "https://ct.soa-gw.canadapost.ca/rs/ship/price";
-    //prod "https://soa-gw.canadapost.ca/rs/ship/price";
+        //prod "https://soa-gw.canadapost.ca/rs/ship/price";
 
 	@Override
 	public void validateModuleConfiguration(
@@ -96,23 +96,6 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 			errorFields = new ArrayList<String>();
 			errorFields.add("apikey");
 		}
-		
-/*		Map<String,List<String>> options = integrationConfiguration.getIntegrationOptions();
-		List<String> services = options.get("services-domestic");
-		if(services==null || services.size()==0) {
-			if(errorFields==null) {
-				errorFields = new ArrayList<String>();
-			}
-			errorFields.add("services");
-		}
-		
-		if(services!=null && services.size()>3) {
-			if(errorFields==null) {
-				errorFields = new ArrayList<String>();
-			}
-			errorFields.add("services");
-		}*/
-		
 
 		if(errorFields!=null) {
 			IntegrationException ex = new IntegrationException(IntegrationException.ERROR_VALIDATION_SAVE);
@@ -142,9 +125,12 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 		
 		Validate.notNull(packages, "Packages are null");
 		Validate.notNull(delivery, "Delivery is null");
-		Validate.notNull(delivery.getPostalCode(), "Delivery postal code is null");
 		Validate.notNull(origin, "Origin is null");
 		Validate.notNull(origin.getPostalCode(), "Origin postal code is null");
+		
+		if(StringUtils.isBlank(delivery.getPostalCode())) {
+			return null;
+		}
 
 		// only applies to Canada and US
 		Country country = delivery.getCountry();
@@ -172,13 +158,13 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 			throw new IntegrationException("Canadapost missing configuration key password");
 		}
 		
-		if(StringUtils.isBlank(keys.get("client"))) {
-			throw new IntegrationException("Canadapost missing configuration key client");
+		if(StringUtils.isBlank(keys.get("account"))) {
+			throw new IntegrationException("Canadapost missing configuration key account");
 		}
 		
     	String username = keys.get("username");
     	String password = keys.get("password");
-    	String client = keys.get("client");
+    	String client = keys.get("account");
     	
     	List<String> domesticServices = options.get("services-domestic");
     	List<String> intlServices = options.get("services-intl");
