@@ -25,18 +25,18 @@ import ca.canadapost.cpcdp.rating.generated.rating.MailingScenario.Destination.U
 import ca.canadapost.cpcdp.rating.generated.rating.MailingScenario.Services;
 import ca.canadapost.cpcdp.rating.generated.rating.PriceQuotes;
 
-import com.salesmanager.core.business.common.model.Delivery;
-import com.salesmanager.core.business.merchant.model.MerchantStore;
-import com.salesmanager.core.business.reference.country.model.Country;
-import com.salesmanager.core.business.shipping.model.PackageDetails;
-import com.salesmanager.core.business.shipping.model.ShippingConfiguration;
-import com.salesmanager.core.business.shipping.model.ShippingOption;
-import com.salesmanager.core.business.shipping.model.ShippingOrigin;
-import com.salesmanager.core.business.shipping.model.ShippingQuote;
-import com.salesmanager.core.business.system.model.CustomIntegrationConfiguration;
-import com.salesmanager.core.business.system.model.IntegrationConfiguration;
-import com.salesmanager.core.business.system.model.IntegrationModule;
-import com.salesmanager.core.business.system.model.ModuleConfig;
+import com.salesmanager.core.model.common.Delivery;
+import com.salesmanager.core.model.merchant.MerchantStore;
+import com.salesmanager.core.model.reference.country.Country;
+import com.salesmanager.core.model.shipping.PackageDetails;
+import com.salesmanager.core.model.shipping.ShippingConfiguration;
+import com.salesmanager.core.model.shipping.ShippingOption;
+import com.salesmanager.core.model.shipping.ShippingOrigin;
+import com.salesmanager.core.model.shipping.ShippingQuote;
+import com.salesmanager.core.model.system.CustomIntegrationConfiguration;
+import com.salesmanager.core.model.system.IntegrationConfiguration;
+import com.salesmanager.core.model.system.IntegrationModule;
+import com.salesmanager.core.model.system.ModuleConfig;
 import com.salesmanager.core.modules.integration.IntegrationException;
 import com.salesmanager.core.modules.integration.shipping.model.ShippingQuoteModule;
 import com.sun.jersey.api.client.Client;
@@ -59,7 +59,7 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 	private final static String US_CODE = "US";
 	
 	//dev  "https://ct.soa-gw.canadapost.ca/rs/ship/price";
-    //prod "https://soa-gw.canadapost.ca/rs/ship/price";
+        //prod "https://soa-gw.canadapost.ca/rs/ship/price";
 
 	@Override
 	public void validateModuleConfiguration(
@@ -96,23 +96,6 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 			errorFields = new ArrayList<String>();
 			errorFields.add("apikey");
 		}
-		
-/*		Map<String,List<String>> options = integrationConfiguration.getIntegrationOptions();
-		List<String> services = options.get("services-domestic");
-		if(services==null || services.size()==0) {
-			if(errorFields==null) {
-				errorFields = new ArrayList<String>();
-			}
-			errorFields.add("services");
-		}
-		
-		if(services!=null && services.size()>3) {
-			if(errorFields==null) {
-				errorFields = new ArrayList<String>();
-			}
-			errorFields.add("services");
-		}*/
-		
 
 		if(errorFields!=null) {
 			IntegrationException ex = new IntegrationException(IntegrationException.ERROR_VALIDATION_SAVE);
@@ -140,11 +123,16 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 			ShippingConfiguration shippingConfiguration, Locale locale)
 			throws IntegrationException {
 		
+		
+		Validate.notNull(shippingConfiguration, "Module Canadapost is not configured");
 		Validate.notNull(packages, "Packages are null");
 		Validate.notNull(delivery, "Delivery is null");
-		Validate.notNull(delivery.getPostalCode(), "Delivery postal code is null");
 		Validate.notNull(origin, "Origin is null");
 		Validate.notNull(origin.getPostalCode(), "Origin postal code is null");
+		
+		if(StringUtils.isBlank(delivery.getPostalCode())) {
+			return null;
+		}
 
 		// only applies to Canada and US
 		Country country = delivery.getCountry();
@@ -172,13 +160,13 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 			throw new IntegrationException("Canadapost missing configuration key password");
 		}
 		
-		if(StringUtils.isBlank(keys.get("client"))) {
-			throw new IntegrationException("Canadapost missing configuration key client");
+		if(StringUtils.isBlank(keys.get("account"))) {
+			throw new IntegrationException("Canadapost missing configuration key account");
 		}
 		
     	String username = keys.get("username");
     	String password = keys.get("password");
-    	String client = keys.get("client");
+    	String client = keys.get("account");
     	
     	List<String> domesticServices = options.get("services-domestic");
     	List<String> intlServices = options.get("services-intl");
