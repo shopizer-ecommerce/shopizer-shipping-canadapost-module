@@ -7,28 +7,30 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.inject.Inject;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
-import com.mysema.commons.lang.Assert;
-import com.salesmanager.core.business.common.model.Delivery;
-import com.salesmanager.core.business.reference.country.model.Country;
-import com.salesmanager.core.business.reference.zone.model.Zone;
-import com.salesmanager.core.business.shipping.model.PackageDetails;
-import com.salesmanager.core.business.shipping.model.ShippingConfiguration;
-import com.salesmanager.core.business.shipping.model.ShippingOption;
-import com.salesmanager.core.business.shipping.model.ShippingOrigin;
-import com.salesmanager.core.business.shipping.model.ShippingQuote;
-import com.salesmanager.core.business.system.model.IntegrationConfiguration;
-import com.salesmanager.core.business.system.model.IntegrationModule;
-import com.salesmanager.core.business.system.model.ModuleConfig;
+import com.salesmanager.core.model.common.Delivery;
+import com.salesmanager.core.model.reference.country.Country;
+import com.salesmanager.core.model.reference.zone.Zone;
+import com.salesmanager.core.model.shipping.PackageDetails;
+import com.salesmanager.core.model.shipping.ShippingConfiguration;
+import com.salesmanager.core.model.shipping.ShippingOption;
+import com.salesmanager.core.model.shipping.ShippingOrigin;
+import com.salesmanager.core.model.shipping.ShippingQuote;
+import com.salesmanager.core.model.system.IntegrationConfiguration;
+import com.salesmanager.core.model.system.IntegrationModule;
+import com.salesmanager.core.model.system.ModuleConfig;
 import com.shopizer.modules.shipping.canadapost.CanadaPostQuoteModule;
+
+import junit.framework.Assert;
 
 
 /**
@@ -47,10 +49,10 @@ import com.shopizer.modules.shipping.canadapost.CanadaPostQuoteModule;
 })
 public class ShippingCanadaPostTestCase {
 	
-	@Autowired
+	@Inject
 	CanadaPostQuoteModule canadapost;
 
-	 @Autowired
+	 @Inject
 	 @Qualifier("canadapost-properties")
 	 private Properties userProps;
 
@@ -169,7 +171,7 @@ public class ShippingCanadaPostTestCase {
 
 		List<ShippingOption> options = canadapost.getShippingQuotes(quote, details, null, delivery, origin, null, configuration, module, shippingConfiguration, Locale.CANADA);
 		
-		Assert.notEmpty(options, "Options should not be empty");
+		Assert.assertNotNull("Options should not be empty", options);
 		
 		for(ShippingOption opt : options) {
 			System.out.println(opt.getOptionCode() + " " + opt.getOptionPrice().doubleValue());
