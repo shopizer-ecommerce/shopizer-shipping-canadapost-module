@@ -22,22 +22,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * <p>Java class for LinkType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="LinkType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="href" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
- *       &lt;attribute name="rel" use="required" type="{http://www.canadapost.ca/ws/ship/rate-v3}RelType" />
- *       &lt;attribute name="index" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" />
- *       &lt;attribute name="media-type" use="required" type="{http://www.w3.org/2001/XMLSchema}normalizedString" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>The following schema fragment specifies the expected content contained within this class. 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LinkType")

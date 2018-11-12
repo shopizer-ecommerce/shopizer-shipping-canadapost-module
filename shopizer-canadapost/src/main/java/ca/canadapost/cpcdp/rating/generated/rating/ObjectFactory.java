@@ -238,6 +238,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link MailingScenario.ParcelCharacteristics.Dimensions }
+     * @return
+     *   possible value
+     *   {@link MailingScenario.ParcelCharacteristics.Dimensions }
      * 
      */
     public MailingScenario.ParcelCharacteristics.Dimensions createMailingScenarioParcelCharacteristicsDimensions() {
@@ -246,6 +249,9 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link MailingScenario.Options.Option }
+     *      * @return
+     *   possible value
+     *   {@link MailingScenario.Options.Option }
      * 
      */
     public MailingScenario.Options.Option createMailingScenarioOptionsOption() {

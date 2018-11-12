@@ -20,25 +20,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>Java class for CcDetailsType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="CcDetailsType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="cc-type" type="{}CcType"/>
- *         &lt;element name="cc-number" type="{}CcNumberType"/>
- *         &lt;element name="cc-name" type="{}CcNameType"/>
- *         &lt;element name="cc-expiry" type="{}CcExpiryType"/>
- *         &lt;element name="cc-cvv" type="{}CcCvvType" minOccurs="0"/>
- *         &lt;element name="cc-address-details" type="{}CcAddressDetailsType" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CcDetailsType", propOrder = {

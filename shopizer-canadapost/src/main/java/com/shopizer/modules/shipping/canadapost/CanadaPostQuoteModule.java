@@ -49,7 +49,6 @@ import com.sun.jersey.api.client.config.DefaultClientConfig;
  * Shipping Module for Canada Post GetRates service
  * https://www.canadapost.ca/cpo/mc/business/productsservices/developers/services/rating/default.jsf
  * @author carlsamson
- *
  */
 public class CanadaPostQuoteModule implements ShippingQuoteModule {
 	
@@ -59,7 +58,7 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 	private final static String US_CODE = "US";
 	
 	//dev  "https://ct.soa-gw.canadapost.ca/rs/ship/price";
-        //prod "https://soa-gw.canadapost.ca/rs/ship/price";
+    //prod "https://soa-gw.canadapost.ca/rs/ship/price";
 
 	@Override
 	public void validateModuleConfiguration(

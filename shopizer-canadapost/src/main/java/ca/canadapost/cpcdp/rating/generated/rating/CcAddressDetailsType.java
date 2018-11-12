@@ -20,45 +20,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>Java class for CcAddressDetailsType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="CcAddressDetailsType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="address-line-1">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}normalizedString">
- *               &lt;minLength value="1"/>
- *               &lt;maxLength value="44"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="address-line-2" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}normalizedString">
- *               &lt;maxLength value="44"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="city">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}normalizedString">
- *               &lt;minLength value="1"/>
- *               &lt;maxLength value="40"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="prov-state" type="{http://www.canadapost.ca/ws/ship/rate-v3}ProvinceStateOrInternationalType"/>
- *         &lt;element name="postal-zip-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}PostalCodeOrZipOrInternationalType" minOccurs="0"/>
- *         &lt;element name="country-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}CountryCodeType"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CcAddressDetailsType", propOrder = {

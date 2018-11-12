@@ -23,47 +23,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *         &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *         &lt;element name="option-class" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *         &lt;element name="prints-on-label" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="qualifier-required" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="conflicting-options" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString" maxOccurs="unbounded"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="prerequisite-options" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString" maxOccurs="unbounded"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>The following schema fragment specifies the expected content contained within this class. 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -96,10 +56,7 @@ public class Option {
     /**
      * Gets the value of the optionCode property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return {@link String}   
      */
     public String getOptionCode() {
         return optionCode;
@@ -167,7 +124,7 @@ public class Option {
 
     /**
      * Gets the value of the printsOnLabel property.
-     * 
+     * @return print on label
      */
     public boolean isPrintsOnLabel() {
         return printsOnLabel;
@@ -175,7 +132,7 @@ public class Option {
 
     /**
      * Sets the value of the printsOnLabel property.
-     * 
+     * @param value print on label
      */
     public void setPrintsOnLabel(boolean value) {
         this.printsOnLabel = value;
@@ -183,7 +140,7 @@ public class Option {
 
     /**
      * Gets the value of the qualifierRequired property.
-     * 
+     * @return qualifier required
      */
     public boolean isQualifierRequired() {
         return qualifierRequired;
@@ -191,7 +148,7 @@ public class Option {
 
     /**
      * Sets the value of the qualifierRequired property.
-     * 
+     * @param value qualifier required
      */
     public void setQualifierRequired(boolean value) {
         this.qualifierRequired = value;
@@ -246,25 +203,7 @@ public class Option {
     }
 
 
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString" maxOccurs="unbounded"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
+
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
         "optionCodes"
@@ -295,7 +234,7 @@ public class Option {
          * <p>
          * Objects of the following type(s) are allowed in the list
          * {@link String }
-         * 
+         * @return List of String
          * 
          */
         public List<String> getOptionCodes() {
@@ -312,20 +251,6 @@ public class Option {
      * <p>Java class for anonymous complex type.
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString" maxOccurs="unbounded"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -357,6 +282,7 @@ public class Option {
          * <p>
          * Objects of the following type(s) are allowed in the list
          * {@link String }
+         * @return List of String
          * 
          * 
          */

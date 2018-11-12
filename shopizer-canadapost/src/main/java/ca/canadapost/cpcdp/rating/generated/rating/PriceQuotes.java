@@ -26,156 +26,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="price-quote" maxOccurs="unbounded" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="service-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}ServiceCodeType"/>
- *                   &lt;element name="service-link" type="{http://www.canadapost.ca/ws/ship/rate-v3}LinkType"/>
- *                   &lt;element name="service-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *                   &lt;element name="price-details">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="base" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="taxes" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="gst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
- *                                       &lt;element name="pst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
- *                                       &lt;element name="hst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="due" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="options" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="option" maxOccurs="20">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;all>
- *                                                 &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *                                                 &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *                                                 &lt;element name="option-price" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                 &lt;element name="qualifier" minOccurs="0">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;all>
- *                                                           &lt;element name="step-size" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                                                           &lt;element name="step-cost" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                                                           &lt;element name="included-amount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                                                           &lt;element name="max-value" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                                                           &lt;element name="included" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *                                                           &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                                                         &lt;/all>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                               &lt;/all>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="adjustments" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="adjustment" maxOccurs="20">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;all>
- *                                                 &lt;element name="adjustment-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *                                                 &lt;element name="adjustment-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *                                                 &lt;element name="adjustment-cost" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                 &lt;element name="qualifier" minOccurs="0">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;all>
- *                                                           &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                         &lt;/all>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                               &lt;/all>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="weight-details">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="cubed-weight" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="service-standard">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="am-delivery" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                             &lt;element name="guaranteed-delivery" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                             &lt;element name="expected-transit-time" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *                             &lt;element name="expected-delivery-date" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>The following schema fragment specifies the expected content contained within this class. 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -207,7 +58,7 @@ public class PriceQuotes {
      * Objects of the following type(s) are allowed in the list
      * {@link PriceQuotes.PriceQuote }
      * 
-     * 
+     * @return PriceQuotes.PriceQuote
      */
     public List<PriceQuotes.PriceQuote> getPriceQuotes() {
         if (priceQuotes == null) {
@@ -221,144 +72,6 @@ public class PriceQuotes {
      * <p>Java class for anonymous complex type.
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="service-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}ServiceCodeType"/>
-     *         &lt;element name="service-link" type="{http://www.canadapost.ca/ws/ship/rate-v3}LinkType"/>
-     *         &lt;element name="service-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-     *         &lt;element name="price-details">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="base" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                   &lt;element name="taxes" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="gst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-     *                             &lt;element name="pst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-     *                             &lt;element name="hst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="due" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                   &lt;element name="options" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="option" maxOccurs="20">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;all>
-     *                                       &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-     *                                       &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-     *                                       &lt;element name="option-price" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                                       &lt;element name="qualifier" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;all>
-     *                                                 &lt;element name="step-size" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                                                 &lt;element name="step-cost" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                                                 &lt;element name="included-amount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                                                 &lt;element name="max-value" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                                                 &lt;element name="included" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-     *                                                 &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                                               &lt;/all>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/all>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="adjustments" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="adjustment" maxOccurs="20">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;all>
-     *                                       &lt;element name="adjustment-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-     *                                       &lt;element name="adjustment-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-     *                                       &lt;element name="adjustment-cost" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                                       &lt;element name="qualifier" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;all>
-     *                                                 &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                                               &lt;/all>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/all>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="weight-details">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="cubed-weight" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="service-standard">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="am-delivery" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *                   &lt;element name="guaranteed-delivery" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *                   &lt;element name="expected-transit-time" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
-     *                   &lt;element name="expected-delivery-date" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
      * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
@@ -533,106 +246,6 @@ public class PriceQuotes {
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="base" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *         &lt;element name="taxes" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="gst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-         *                   &lt;element name="pst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-         *                   &lt;element name="hst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="due" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *         &lt;element name="options" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="option" maxOccurs="20">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;all>
-         *                             &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-         *                             &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-         *                             &lt;element name="option-price" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                             &lt;element name="qualifier" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;all>
-         *                                       &lt;element name="step-size" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *                                       &lt;element name="step-cost" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *                                       &lt;element name="included-amount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *                                       &lt;element name="max-value" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *                                       &lt;element name="included" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-         *                                       &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *                                     &lt;/all>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/all>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="adjustments" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="adjustment" maxOccurs="20">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;all>
-         *                             &lt;element name="adjustment-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-         *                             &lt;element name="adjustment-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-         *                             &lt;element name="adjustment-cost" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                             &lt;element name="qualifier" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;all>
-         *                                       &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                                     &lt;/all>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/all>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -774,41 +387,6 @@ public class PriceQuotes {
              * 
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="adjustment" maxOccurs="20">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;all>
-             *                   &lt;element name="adjustment-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-             *                   &lt;element name="adjustment-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-             *                   &lt;element name="adjustment-cost" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *                   &lt;element name="qualifier" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;all>
-             *                             &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *                           &lt;/all>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/all>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             * 
              * 
              */
             @XmlAccessorType(XmlAccessType.FIELD)
@@ -836,11 +414,9 @@ public class PriceQuotes {
                  * </pre>
                  * 
                  * 
-                 * <p>
+                 * @return
                  * Objects of the following type(s) are allowed in the list
                  * {@link PriceQuotes.PriceQuote.PriceDetails.Adjustments.Adjustment }
-                 * 
-                 * 
                  */
                 public List<PriceQuotes.PriceQuote.PriceDetails.Adjustments.Adjustment> getAdjustments() {
                     if (adjustments == null) {
@@ -854,31 +430,6 @@ public class PriceQuotes {
                  * <p>Java class for anonymous complex type.
                  * 
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
-                 * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;all>
-                 *         &lt;element name="adjustment-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-                 *         &lt;element name="adjustment-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-                 *         &lt;element name="adjustment-cost" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                 *         &lt;element name="qualifier" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;all>
-                 *                   &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                 *                 &lt;/all>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/all>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
-                 * </pre>
                  * 
                  * 
                  */
@@ -1002,19 +553,6 @@ public class PriceQuotes {
                      * 
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
-                     * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;all>
-                     *         &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                     *       &lt;/all>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
-                     * </pre>
-                     * 
-                     * 
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
@@ -1061,46 +599,6 @@ public class PriceQuotes {
              * 
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="option" maxOccurs="20">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;all>
-             *                   &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-             *                   &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-             *                   &lt;element name="option-price" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *                   &lt;element name="qualifier" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;all>
-             *                             &lt;element name="step-size" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-             *                             &lt;element name="step-cost" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-             *                             &lt;element name="included-amount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-             *                             &lt;element name="max-value" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-             *                             &lt;element name="included" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-             *                             &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-             *                           &lt;/all>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/all>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             * 
              * 
              */
             @XmlAccessorType(XmlAccessType.FIELD)
@@ -1128,7 +626,7 @@ public class PriceQuotes {
                  * </pre>
                  * 
                  * 
-                 * <p>
+                 * @return
                  * Objects of the following type(s) are allowed in the list
                  * {@link PriceQuotes.PriceQuote.PriceDetails.Options.Option }
                  * 
@@ -1146,37 +644,6 @@ public class PriceQuotes {
                  * <p>Java class for anonymous complex type.
                  * 
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
-                 * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;all>
-                 *         &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-                 *         &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-                 *         &lt;element name="option-price" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                 *         &lt;element name="qualifier" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;all>
-                 *                   &lt;element name="step-size" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                 *                   &lt;element name="step-cost" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                 *                   &lt;element name="included-amount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                 *                   &lt;element name="max-value" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                 *                   &lt;element name="included" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-                 *                   &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                 *                 &lt;/all>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/all>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
-                 * </pre>
-                 * 
                  * 
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1298,24 +765,6 @@ public class PriceQuotes {
                      * <p>Java class for anonymous complex type.
                      * 
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
-                     * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;all>
-                     *         &lt;element name="step-size" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                     *         &lt;element name="step-cost" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                     *         &lt;element name="included-amount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                     *         &lt;element name="max-value" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                     *         &lt;element name="included" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-                     *         &lt;element name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-                     *       &lt;/all>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
-                     * </pre>
-                     * 
                      * 
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
@@ -1491,21 +940,6 @@ public class PriceQuotes {
              * 
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="gst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-             *         &lt;element name="pst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-             *         &lt;element name="hst" type="{http://www.canadapost.ca/ws/ship/rate-v3}TaxType" minOccurs="0"/>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             * 
-             * 
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
@@ -1599,22 +1033,6 @@ public class PriceQuotes {
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="am-delivery" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-         *         &lt;element name="guaranteed-delivery" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-         *         &lt;element name="expected-transit-time" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
-         *         &lt;element name="expected-delivery-date" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -1635,6 +1053,8 @@ public class PriceQuotes {
 
             /**
              * Gets the value of the amDelivery property.
+             * @return
+             * 	boolean
              * 
              */
             public boolean isAmDelivery() {
@@ -1643,6 +1063,10 @@ public class PriceQuotes {
 
             /**
              * Sets the value of the amDelivery property.
+             * @param
+             *     value
+             *     boolean
+             *     
              * 
              */
             public void setAmDelivery(boolean value) {
@@ -1651,6 +1075,8 @@ public class PriceQuotes {
 
             /**
              * Gets the value of the guaranteedDelivery property.
+             * @return
+             * 	boolean
              * 
              */
             public boolean isGuaranteedDelivery() {
@@ -1659,6 +1085,9 @@ public class PriceQuotes {
 
             /**
              * Sets the value of the guaranteedDelivery property.
+             * @param
+             *     value
+             *     boolean
              * 
              */
             public void setGuaranteedDelivery(boolean value) {
@@ -1720,19 +1149,6 @@ public class PriceQuotes {
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="cubed-weight" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
          * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)

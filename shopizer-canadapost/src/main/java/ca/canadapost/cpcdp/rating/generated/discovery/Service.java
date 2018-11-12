@@ -25,79 +25,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="service-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}ServiceCodeType"/>
- *         &lt;element name="service-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *         &lt;element name="comment" type="{http://www.w3.org/2001/XMLSchema}normalizedString" minOccurs="0"/>
- *         &lt;element name="options" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="option" maxOccurs="unbounded">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *                             &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
- *                             &lt;element name="link" type="{http://www.canadapost.ca/ws/ship/rate-v3}LinkType"/>
- *                             &lt;element name="mandatory" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                             &lt;element name="qualifier-required" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                             &lt;element name="qualifier-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="restrictions">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="weight-restriction" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
- *                   &lt;element name="dimensional-restrictions">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="length" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
- *                             &lt;element name="width" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
- *                             &lt;element name="height" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
- *                             &lt;element name="length-plus-girth-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                             &lt;element name="length-height-width-sum-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                             &lt;element name="oversize-limit" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="density-factor" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                   &lt;element name="can-ship-in-mailing-tube" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                   &lt;element name="can-ship-unpackaged" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                   &lt;element name="allowed-as-return-service" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -185,7 +112,7 @@ public class Service {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link String}
      *     
      */
     public void setComment(String value) {
@@ -245,35 +172,6 @@ public class Service {
      * <p>Java class for anonymous complex type.
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="option" maxOccurs="unbounded">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-     *                   &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-     *                   &lt;element name="link" type="{http://www.canadapost.ca/ws/ship/rate-v3}LinkType"/>
-     *                   &lt;element name="mandatory" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *                   &lt;element name="qualifier-required" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *                   &lt;element name="qualifier-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -304,6 +202,8 @@ public class Service {
          * Objects of the following type(s) are allowed in the list
          * {@link Service.Options.Option }
          * 
+         * @return Service.Options.Option
+         * 
          * 
          */
         public List<Service.Options.Option> getOptions() {
@@ -318,24 +218,6 @@ public class Service {
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-         *         &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}normalizedString"/>
-         *         &lt;element name="link" type="{http://www.canadapost.ca/ws/ship/rate-v3}LinkType"/>
-         *         &lt;element name="mandatory" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-         *         &lt;element name="qualifier-required" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-         *         &lt;element name="qualifier-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
          * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
@@ -434,6 +316,7 @@ public class Service {
 
             /**
              * Gets the value of the mandatory property.
+             * @return boolean
              * 
              */
             public boolean isMandatory() {
@@ -442,6 +325,9 @@ public class Service {
 
             /**
              * Sets the value of the mandatory property.
+             *   @param value
+             *     allowed object is
+             *     boolean
              * 
              */
             public void setMandatory(boolean value) {
@@ -450,6 +336,7 @@ public class Service {
 
             /**
              * Gets the value of the qualifierRequired property.
+             * @return boolean
              * 
              */
             public boolean isQualifierRequired() {
@@ -458,6 +345,9 @@ public class Service {
 
             /**
              * Sets the value of the qualifierRequired property.
+             *   @param value
+             *     allowed object is
+             *     boolean
              * 
              */
             public void setQualifierRequired(boolean value) {
@@ -497,39 +387,6 @@ public class Service {
      * <p>Java class for anonymous complex type.
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="weight-restriction" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
-     *         &lt;element name="dimensional-restrictions">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="length" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
-     *                   &lt;element name="width" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
-     *                   &lt;element name="height" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
-     *                   &lt;element name="length-plus-girth-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                   &lt;element name="length-height-width-sum-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                   &lt;element name="oversize-limit" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="density-factor" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-     *         &lt;element name="can-ship-in-mailing-tube" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *         &lt;element name="can-ship-unpackaged" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *         &lt;element name="allowed-as-return-service" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
      * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
@@ -625,6 +482,7 @@ public class Service {
 
         /**
          * Gets the value of the canShipInMailingTube property.
+         * @return boolean
          * 
          */
         public boolean isCanShipInMailingTube() {
@@ -633,7 +491,10 @@ public class Service {
 
         /**
          * Sets the value of the canShipInMailingTube property.
-         * 
+         * @param 
+         *    value
+         *    boolean
+         *          
          */
         public void setCanShipInMailingTube(boolean value) {
             this.canShipInMailingTube = value;
@@ -641,6 +502,7 @@ public class Service {
 
         /**
          * Gets the value of the canShipUnpackaged property.
+         * @return boolean
          * 
          */
         public boolean isCanShipUnpackaged() {
@@ -649,6 +511,9 @@ public class Service {
 
         /**
          * Sets the value of the canShipUnpackaged property.
+         * @param 
+         *    value
+         *    boolean
          * 
          */
         public void setCanShipUnpackaged(boolean value) {
@@ -657,6 +522,7 @@ public class Service {
 
         /**
          * Gets the value of the allowedAsReturnService property.
+         * @return boolean
          * 
          */
         public boolean isAllowedAsReturnService() {
@@ -665,6 +531,9 @@ public class Service {
 
         /**
          * Sets the value of the allowedAsReturnService property.
+         * @param 
+         *    value
+         *    boolean
          * 
          */
         public void setAllowedAsReturnService(boolean value) {
@@ -676,24 +545,6 @@ public class Service {
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="length" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
-         *         &lt;element name="width" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
-         *         &lt;element name="height" type="{http://www.canadapost.ca/ws/ship/rate-v3}NumberRangeType"/>
-         *         &lt;element name="length-plus-girth-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *         &lt;element name="length-height-width-sum-max" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *         &lt;element name="oversize-limit" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
          * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)

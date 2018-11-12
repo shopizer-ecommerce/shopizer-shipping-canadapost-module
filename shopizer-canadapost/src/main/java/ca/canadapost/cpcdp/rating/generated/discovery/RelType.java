@@ -15,18 +15,6 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for RelType.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RelType">
- *   &lt;restriction base="{http://www.canadapost.ca/ws/ship/rate-v3}RelType">
- *     &lt;enumeration value="service"/>
- *     &lt;enumeration value="option"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
  */
 @XmlType(name = "RelType")
 @XmlEnum

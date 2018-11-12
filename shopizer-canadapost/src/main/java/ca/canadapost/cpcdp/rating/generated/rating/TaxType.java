@@ -20,18 +20,6 @@ import javax.xml.bind.annotation.XmlValue;
  * <p>Java class for TaxType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="TaxType">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>decimal">
- *       &lt;attribute name="percent" type="{http://www.w3.org/2001/XMLSchema}decimal" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TaxType", propOrder = {

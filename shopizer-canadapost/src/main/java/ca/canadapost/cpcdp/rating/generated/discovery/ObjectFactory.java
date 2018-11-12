@@ -38,7 +38,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Services }
-     * 
+     * @return Services
      */
     public Services createServices() {
         return new Services();
@@ -46,7 +46,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Service }
-     * 
+     *  @return Service
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Service createService() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Service();
@@ -54,7 +54,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Option }
-     * 
+     * @return Option
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Option createOption() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Option();
@@ -62,7 +62,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Options }
-     * 
+     * @return Option
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Options createOptions() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Options();
@@ -70,7 +70,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Service.Restrictions }
-     * 
+     * @return Restrictions
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Service.Restrictions createServiceRestrictions() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Service.Restrictions();
@@ -78,7 +78,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Service.Options }
-     * 
+     * @return Options
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Service.Options createServiceOptions() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Service.Options();
@@ -86,7 +86,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Services.Service }
-     * 
+     * @return Service
      */
     public Services.Service createServicesService() {
         return new Services.Service();
@@ -94,7 +94,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Link }
-     * 
+     * @return Link
      */
     public Link createLink() {
         return new Link();
@@ -102,7 +102,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Links }
-     * 
+     * @return Link
      */
     public Links createLinks() {
         return new Links();
@@ -110,7 +110,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Option.ConflictingOptions }
-     * 
+     * @return ConflictingOptions
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Option.ConflictingOptions createOptionConflictingOptions() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Option.ConflictingOptions();
@@ -118,7 +118,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Option.PrerequisiteOptions }
-     * 
+     * @return PrerequisiteOptions
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Option.PrerequisiteOptions createOptionPrerequisiteOptions() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Option.PrerequisiteOptions();
@@ -126,7 +126,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Options.Option }
-     * 
+     * @return Option
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Options.Option createOptionsOption() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Options.Option();
@@ -134,7 +134,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link CcAddressDetailsType }
-     * 
+     * @return CcAddressDetailsType
      */
     public CcAddressDetailsType createCcAddressDetailsType() {
         return new CcAddressDetailsType();
@@ -142,7 +142,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link NumberRangeType }
-     * 
+     * @return NumberRangeType
      */
     public NumberRangeType createNumberRangeType() {
         return new NumberRangeType();
@@ -150,7 +150,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link CcDetailsType }
-     * 
+     * @return CcDetailsType
      */
     public CcDetailsType createCcDetailsType() {
         return new CcDetailsType();
@@ -158,7 +158,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Service.Restrictions.DimensionalRestrictions }
-     * 
+     * @return DimensionalRestrictions
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Service.Restrictions.DimensionalRestrictions createServiceRestrictionsDimensionalRestrictions() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Service.Restrictions.DimensionalRestrictions();
@@ -166,7 +166,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ca.canadapost.cpcdp.rating.generated.discovery.Service.Options.Option }
-     * 
+     * @return Option
      */
     public ca.canadapost.cpcdp.rating.generated.discovery.Service.Options.Option createServiceOptionsOption() {
         return new ca.canadapost.cpcdp.rating.generated.discovery.Service.Options.Option();

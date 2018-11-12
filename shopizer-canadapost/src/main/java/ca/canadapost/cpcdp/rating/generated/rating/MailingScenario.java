@@ -25,151 +25,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="customer-number" type="{http://www.canadapost.ca/ws/ship/rate-v3}CustomerIDType" minOccurs="0"/>
- *         &lt;element name="contract-id" type="{http://www.canadapost.ca/ws/ship/rate-v3}ContractIDType" minOccurs="0"/>
- *         &lt;element name="promo-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}PromoCodeType" minOccurs="0"/>
- *         &lt;element name="quote-type" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="commercial"/>
- *               &lt;enumeration value="counter"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="expected-mailing-date" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
- *         &lt;element name="options" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="option" maxOccurs="20">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="option-code">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}normalizedString">
- *                                   &lt;minLength value="1"/>
- *                                   &lt;maxLength value="10"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="option-amount" type="{http://www.canadapost.ca/ws/ship/rate-v3}CostTypeNonZero" minOccurs="0"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="parcel-characteristics">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="weight">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                         &lt;minExclusive value="0"/>
- *                         &lt;maxInclusive value="99.999"/>
- *                         &lt;fractionDigits value="3"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="dimensions" minOccurs="0">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="length" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
- *                             &lt;element name="width" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
- *                             &lt;element name="height" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="unpackaged" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *                   &lt;element name="mailing-tube" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *                   &lt;element name="oversized" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="services" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="service-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}ServiceCodeType" maxOccurs="20"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="origin-postal-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}PostalCodeType"/>
- *         &lt;element name="destination">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;choice>
- *                   &lt;element name="domestic">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="postal-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}PostalCodeType"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="united-states">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="zip-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}ZipCodeType"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="international">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="country-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}CountryCodeType"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/choice>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>The following schema fragment specifies the expected content contained within this class. 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -445,51 +301,6 @@ public class MailingScenario {
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;choice>
-     *         &lt;element name="domestic">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="postal-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}PostalCodeType"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="united-states">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="zip-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}ZipCodeType"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="international">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="country-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}CountryCodeType"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/choice>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -582,19 +393,6 @@ public class MailingScenario {
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="postal-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}PostalCodeType"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -636,20 +434,6 @@ public class MailingScenario {
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="country-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}CountryCodeType"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -691,20 +475,6 @@ public class MailingScenario {
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="zip-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}ZipCodeType"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -749,37 +519,6 @@ public class MailingScenario {
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="option" maxOccurs="20">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="option-code">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}normalizedString">
-     *                         &lt;minLength value="1"/>
-     *                         &lt;maxLength value="10"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="option-amount" type="{http://www.canadapost.ca/ws/ship/rate-v3}CostTypeNonZero" minOccurs="0"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -806,10 +545,9 @@ public class MailingScenario {
          * </pre>
          * 
          * 
-         * <p>
+         * @return
          * Objects of the following type(s) are allowed in the list
          * {@link MailingScenario.Options.Option }
-         * 
          * 
          */
         public List<MailingScenario.Options.Option> getOptions() {
@@ -824,27 +562,6 @@ public class MailingScenario {
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="option-code">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}normalizedString">
-         *               &lt;minLength value="1"/>
-         *               &lt;maxLength value="10"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="option-amount" type="{http://www.canadapost.ca/ws/ship/rate-v3}CostTypeNonZero" minOccurs="0"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
          * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
@@ -916,43 +633,6 @@ public class MailingScenario {
      * <p>Java class for anonymous complex type.
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="weight">
-     *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *               &lt;minExclusive value="0"/>
-     *               &lt;maxInclusive value="99.999"/>
-     *               &lt;fractionDigits value="3"/>
-     *             &lt;/restriction>
-     *           &lt;/simpleType>
-     *         &lt;/element>
-     *         &lt;element name="dimensions" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="length" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
-     *                   &lt;element name="width" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
-     *                   &lt;element name="height" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="unpackaged" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-     *         &lt;element name="mailing-tube" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-     *         &lt;element name="oversized" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
      * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
@@ -1095,21 +775,6 @@ public class MailingScenario {
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="length" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
-         *         &lt;element name="width" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
-         *         &lt;element name="height" type="{http://www.canadapost.ca/ws/ship/rate-v3}DimensionMeasurementType"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -1206,19 +871,6 @@ public class MailingScenario {
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="service-code" type="{http://www.canadapost.ca/ws/ship/rate-v3}ServiceCodeType" maxOccurs="20"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -1246,7 +898,7 @@ public class MailingScenario {
          * </pre>
          * 
          * 
-         * <p>
+         * @return
          * Objects of the following type(s) are allowed in the list
          * {@link String }
          * 

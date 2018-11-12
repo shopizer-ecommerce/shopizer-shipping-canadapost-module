@@ -23,34 +23,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="option" maxOccurs="unbounded" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}token"/>
- *                   &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}token"/>
- *                   &lt;element name="link" type="{http://www.canadapost.ca/ws/ship/rate-v3}LinkType"/>
- *                   &lt;element name="qualifier-required" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>The following schema fragment specifies the expected content contained within this class. 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -80,8 +53,8 @@ public class Options {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Options.Option }
-     * 
+     * {@link Options.Option}
+     * @return {@link Options.Option} 
      * 
      */
     public List<Options.Option> getOptions() {
@@ -93,26 +66,9 @@ public class Options {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * Java class for anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="option-code" type="{http://www.w3.org/2001/XMLSchema}token"/>
-     *         &lt;element name="option-name" type="{http://www.w3.org/2001/XMLSchema}token"/>
-     *         &lt;element name="link" type="{http://www.canadapost.ca/ws/ship/rate-v3}LinkType"/>
-     *         &lt;element name="qualifier-required" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
+     * The following schema fragment specifies the expected content contained within this class.
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -207,7 +163,7 @@ public class Options {
 
         /**
          * Gets the value of the qualifierRequired property.
-         * 
+         * @return boolean
          */
         public boolean isQualifierRequired() {
             return qualifierRequired;
@@ -215,7 +171,8 @@ public class Options {
 
         /**
          * Sets the value of the qualifierRequired property.
-         * 
+         * @param value
+         *        allowed boolean
          */
         public void setQualifierRequired(boolean value) {
             this.qualifierRequired = value;

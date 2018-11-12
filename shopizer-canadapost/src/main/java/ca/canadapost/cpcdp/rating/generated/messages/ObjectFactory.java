@@ -38,6 +38,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Messages }
+     * @return Messages
      * 
      */
     public Messages createMessages() {
@@ -46,6 +47,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Messages.Message }
+     *  @return Messages
      * 
      */
     public Messages.Message createMessagesMessage() {

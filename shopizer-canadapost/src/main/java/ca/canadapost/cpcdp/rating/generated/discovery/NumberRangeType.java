@@ -18,20 +18,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Java class for NumberRangeType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="NumberRangeType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="min" type="{http://www.w3.org/2001/XMLSchema}decimal" />
- *       &lt;attribute name="max" type="{http://www.w3.org/2001/XMLSchema}decimal" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>The following schema fragment specifies the expected content contained within this class. 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NumberRangeType")

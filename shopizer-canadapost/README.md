@@ -1,4 +1,4 @@
-# shopizer-shipping-canadapost-module 2.2.0
+# shopizer-shipping-canadapost-module 2.3.0
 
 Uses canada post shipping rate system calculator for Shopizer.
 

@@ -42,7 +42,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link LinkType }
-     * 
+     * @return ca.canadapost.cpcdp.rating.generated.common.LinkType
      */
     public LinkType createLinkType() {
         return new LinkType();
@@ -50,7 +50,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Links }
-     * 
+     * @return ca.canadapost.cpcdp.rating.generated.common.Links
      */
     public Links createLinks() {
         return new Links();
@@ -58,7 +58,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link CcAddressDetailsType }
-     * 
+     * @return ca.canadapost.cpcdp.rating.generated.common.CcAddressDetailsType
      */
     public CcAddressDetailsType createCcAddressDetailsType() {
         return new CcAddressDetailsType();
@@ -66,15 +66,17 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link CcDetailsType }
-     * 
+     *  @return ca.canadapost.cpcdp.rating.generated.common.CcDetailsType
      */
     public CcDetailsType createCcDetailsType() {
         return new CcDetailsType();
     }
 
+
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link LinkType }{@code >}}
-     * 
+     * @param value Object of type LinkType
+     * @return LinkType object
      */
     @XmlElementDecl(namespace = "", name = "link")
     public JAXBElement<LinkType> createLink(LinkType value) {
