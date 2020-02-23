@@ -2,6 +2,7 @@ package com.shopizer.modules.shipping.canadapost;
 
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -113,7 +114,6 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 		return null;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public List<ShippingOption> getShippingQuotes(ShippingQuote quote,
 			List<PackageDetails> packages, BigDecimal orderTotal,
@@ -210,6 +210,9 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
         MailingScenario mailingScenario = new MailingScenario();
 		//mailingScenario.setCustomerNumber(client);
         mailingScenario.setQuoteType("counter");
+        //if(!StringUtils.isEmpty(client)) {
+        //	mailingScenario.setCustomerNumber(client);
+        //}
 		
         mailingScenario.setOriginPostalCode(origin.getPostalCode().replaceAll("\\s+","").toUpperCase());
 		Destination destination = new Destination();
@@ -278,9 +281,14 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
         	
         	
         	MailingScenario.ParcelCharacteristics parcelCharacteristics = new MailingScenario.ParcelCharacteristics();
+
+
         	parcelCharacteristics.setWeight(new BigDecimal(packageDetail.getShippingWeight()));
         	MailingScenario.ParcelCharacteristics.Dimensions dimensions = new MailingScenario.ParcelCharacteristics.Dimensions();
+        	
     		
+        	convertPackageSizeAndWeight(store, packageDetail);//possible weight and size conversion
+        	
         	dimensions.setHeight(new BigDecimal(packageDetail.getShippingHeight()));
         	dimensions.setWidth(new BigDecimal(packageDetail.getShippingWidth()));
         	dimensions.setLength(new BigDecimal(packageDetail.getShippingLength()));
@@ -291,9 +299,7 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 
 	        WebResource webResource = serviceClient.resource(link.toString());
 	        ClientResponse resp = webResource.accept("application/vnd.cpc.ship.rate-v3+xml").header("Content-Type", "application/vnd.cpc.ship.rate-v3+xml").acceptLanguage("en-CA").post(ClientResponse.class, mailingScenario);
-	      
-	        
-	        
+
 	        InputStream respIS = resp.getEntityInputStream();
 	        
 	        LOGGER.debug("HTTP Response Status: " + resp.getStatus() + " " + resp.getClientResponseStatus());
@@ -338,9 +344,15 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 	                
 	                IntegrationException ex = new IntegrationException(messageBuilder.toString());
 	                ex.setErrorCode(IntegrationException.TRANSACTION_EXCEPTION);
+	                ex.setMessageCode(messageBuilder.toString());
 	                throw ex;
 	            }
 	        } catch (Exception e) {
+	        	if(e instanceof IntegrationException) {
+	        		try {
+						throw e;
+					} catch (Exception e1) {}
+	        	}
 	            IntegrationException ex = new IntegrationException(e);
 	            ex.setErrorCode(IntegrationException.TRANSACTION_EXCEPTION);
 	            throw ex;
@@ -352,6 +364,24 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
         
         List<ShippingOption> shippingOptions = new ArrayList<ShippingOption>(allOptions.values());
 		return shippingOptions;
+	}
+	
+	private void convertPackageSizeAndWeight(MerchantStore store, PackageDetails pack) {
+		
+		if(!store.getSeizeunitcode().equals("CM")) {//canadapost requires centimeters
+			BigDecimal multiplier = new BigDecimal(2.54);
+			pack.setShippingHeight(new BigDecimal(pack.getShippingHeight()).multiply(multiplier).setScale(0, RoundingMode.CEILING).doubleValue());
+			pack.setShippingWidth(new BigDecimal(pack.getShippingWidth()).multiply(multiplier).setScale(0, RoundingMode.CEILING).doubleValue());
+			pack.setShippingLength(new BigDecimal(pack.getShippingLength()).multiply(multiplier).setScale(0, RoundingMode.CEILING).doubleValue());
+		}
+		
+		if(!store.getWeightunitcode().equals("KG")) {//canadapost requires kilograms
+			BigDecimal multiplier = new BigDecimal(0.453592);
+			pack.setShippingWeight(new BigDecimal(pack.getShippingWeight()).multiply(multiplier).setScale(0, RoundingMode.CEILING).doubleValue());
+		}
+		
+		return;
+		
 	}
 	
 
