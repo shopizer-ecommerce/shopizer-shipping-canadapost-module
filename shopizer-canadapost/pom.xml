@@ -33,7 +33,7 @@
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java-version>1.8</java-version>
-		<sm-core-model.version>2.9.0</sm-core-model.version>
+		<sm-core-model.version>2.11.0</sm-core-model.version>
 		<sm-core-modules.version>2.9.0</sm-core-modules.version>
 		<jackson-version>2.10.2</jackson-version>
 		<jackson-version-databind>2.10.2</jackson-version-databind>
