@@ -267,7 +267,6 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 			for(String intlService : intlServices) {
 				service.getServiceCodes().add(intlService);
 			}
-			
 			mailingScenario.setServices(service);
 		}
 		
@@ -278,15 +277,11 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 		
 		// Execute GetRates Request for each package
         for(PackageDetails packageDetail : packages) {
-        	
-        	
+
         	MailingScenario.ParcelCharacteristics parcelCharacteristics = new MailingScenario.ParcelCharacteristics();
-
-
         	parcelCharacteristics.setWeight(new BigDecimal(packageDetail.getShippingWeight()));
         	MailingScenario.ParcelCharacteristics.Dimensions dimensions = new MailingScenario.ParcelCharacteristics.Dimensions();
         	
-    		
         	convertPackageSizeAndWeight(store, packageDetail);//possible weight and size conversion
         	
         	dimensions.setHeight(new BigDecimal(packageDetail.getShippingHeight()));
@@ -316,9 +311,13 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 	                	PriceQuotes.PriceQuote aPriceQuote = (PriceQuotes.PriceQuote) iter.next();                	
 	                	ShippingOption option = allOptions.get(aPriceQuote.getServiceCode());
 	                	if(option==null) {
+	                		BigDecimal cost = aPriceQuote.getPriceDetails().getBase();
+	                		if(shippingConfiguration.isTaxOnShipping()) {
+	                			cost = aPriceQuote.getPriceDetails().getDue();
+	                		}
 	                		option = new ShippingOption();
 		                	option.setOptionCode(aPriceQuote.getServiceCode());
-		                	option.setOptionPrice(aPriceQuote.getPriceDetails().getDue());
+		                	option.setOptionPrice(cost);
 		                	option.setOptionName(aPriceQuote.getServiceName());
 		                	allOptions.put(aPriceQuote.getServiceCode(), option);
 	                	} else {
@@ -327,7 +326,7 @@ public class CanadaPostQuoteModule implements ShippingQuoteModule {
 	                	}
 	
 	                	LOGGER.debug("Service Name: " + aPriceQuote.getServiceName());
-	                	LOGGER.debug("Price: $" + aPriceQuote.getPriceDetails().getDue());
+	                	LOGGER.debug("Price: $" + aPriceQuote.getPriceDetails().getBase());
 		                
 	                }
 	            } else {

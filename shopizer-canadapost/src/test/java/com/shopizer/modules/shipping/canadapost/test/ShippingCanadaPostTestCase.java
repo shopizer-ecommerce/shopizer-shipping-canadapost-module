@@ -168,6 +168,7 @@ public class ShippingCanadaPostTestCase {
 		configuration.setIntegrationOptions(integrationOptions);
 		
 		ShippingConfiguration shippingConfiguration = new ShippingConfiguration();
+		shippingConfiguration.setTaxOnShipping(false);
 
 		List<ShippingOption> options = canadapost.getShippingQuotes(quote, details, null, delivery, origin, null, configuration, module, shippingConfiguration, Locale.CANADA);
 		

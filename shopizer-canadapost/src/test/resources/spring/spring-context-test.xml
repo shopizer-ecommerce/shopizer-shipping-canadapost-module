@@ -16,9 +16,9 @@
 	<bean id="canadapost" class="com.shopizer.modules.shipping.canadapost.CanadaPostQuoteModule"/>
 	
 	<util:properties id="canadapost-properties">
-    			<prop key="username">FIRST PART OF API KEY BEFORE :</prop>
-    			<prop key="password">FIRST PART OF API KEY AFTER :</prop>
-    			<prop key="mailBy">YOUR CPC IDENTIFIER</prop>
+    			<prop key="username">daba681df893a925</prop>
+    			<prop key="password">387e81b1aaf37cd388b08e</prop>
+    			<prop key="mailBy">0008949266</prop>
     </util:properties>
 
 </beans>
