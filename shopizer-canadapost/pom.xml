@@ -5,7 +5,7 @@
 
 	<groupId>com.shopizer</groupId>
 	<artifactId>shopizer-shipping-canadapost-module</artifactId>
-	<version>2.16.0</version>
+	<version>2.15.0</version>
 	<packaging>jar</packaging>
 	<name>shopizer-shipping-canadapost-module</name>
 	<description>Shopizer module for Canada Post rate</description>
