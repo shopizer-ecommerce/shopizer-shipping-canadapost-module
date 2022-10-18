@@ -36,7 +36,7 @@
 		<sm-core-model.version>2.15.0</sm-core-model.version>
 		<sm-core-modules.version>2.15.0</sm-core-modules.version>
 		<jackson-version>2.10.3</jackson-version>
-		<jackson-version-databind>2.10.3</jackson-version-databind>
+		<jackson-version-databind>2.13.4.1</jackson-version-databind>
 		<org.springframework-version>5.2.6.RELEASE</org.springframework-version>
 		<junit.version>4.13.1</junit.version>
 		<org.aspectj-version>1.9.5</org.aspectj-version>
